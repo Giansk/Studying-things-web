@@ -1,71 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flashcard</title>
-</head>
-<body>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Studying Things Online</h1>
     <div class="container">
-        <div class="add-card-con">
-            <button id="add-card">Add New Card</button>
+      <div class="add-flashcard-con">
+        <button id="add-flashcard">Nueva Pregunta</button>
+      </div>
 
-        </div>
-        <div class="cards-list">
-            <div class="card">
-                <p class="que-div">Question</p>
-                <p class="ans-div">ANSWER</p>
-                <button class="show-hide-btn">Show/Hide</button>
-                <div class="btns-con">
-                    <button class="edit"><i class="fa-solid fa-file-pen"></i></button>
-                    <button class="delete"><i class="fa-solid fa-eraser"></i></button>
-                </div>
-            </div>
-            <div class="card">
-                <p class="que-div">Question</p>
-                <p class="ans-div">ANSWER</p>
-                <button class="show-hide-btn">Show/Hide</button>
-                <div class="btns-con">
-                    <button class="edit"><i class="fa-solid fa-file-pen"></i></button>
-                    <button class="delete"><i class="fa-solid fa-eraser"></i></button>
-                </div>
-            </div>
-            <div class="card">
-                <p class="que-div">Question</p>
-                <p class="ans-div">ANSWER</p>
-                <button class="show-hide-btn">Show/Hide</button>
-                <div class="btns-con">
-                    <button class="edit"><i class="fa-solid fa-file-pen"></i></button>
-                    <button class="delete"><i class="fa-solid fa-eraser"></i></button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal" id="add-card-modal">
-            <H2>ADD FLASHCARD</H2>
-            <div class="wrapper">
-                <div class="error-con">
-                    <span class="hide" id="error">
-                        Imput fields canot be empty!
-                    </span>
-                </div>
-                <i class="fa-regular fa-circle-xmark" id="close-btn"></i>
-            </div>
-            <label for="Question">Question:</label>
-            <textarea name="Question" placeholder="Type the Question here.." class="input" rows="3"></textarea>
-
-            <label for="ANSWER">Answer:</label>
-            <textarea name="ANSWER" placeholder="Type the Answer here.." class="input" rows="4"></textarea>
-            <button id="save-btn">Save</button>
-        </div>
-
+      <!-- Display Card of Question And Answers Here -->
+      <div id="card-con">
+        <div class="card-list-container"></div>
+      </div>
     </div>
 
+    <!-- Input form for users to fill question and answer -->
+    <div class="question-container hide" id="add-question-card">
+      <h2>Agregar Pregunta</h2>
+      <div class="wrapper">
+        <!-- Error message -->
+        <div class="error-con">
+          <span class="hide" id="error">¡Los campos de imput no pueden estar vacíos!</span>
+        </div>
+        <!-- Close Button -->
+        <i class="fa-solid fa-xmark" id="close-btn"></i>
+      </div>
 
+      <label for="question">Pregunta:</label>
+      <textarea
+        class="input"
+        id="question"
+        placeholder="Escribe tu pregunta aqui..."
+        rows="2"
+      ></textarea>
+      <label for="answer">Respuesta:</label>
+      <textarea
+        class="input"
+        id="answer"
+        rows="4"
+        placeholder="Escribe la respuesta..."
+      ></textarea>
+      <button id="save-btn">Guardar</button>
+    </div>
 
+    <!-- Script -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
